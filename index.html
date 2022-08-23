@@ -11,9 +11,163 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <header class="bg-[url('/images/bg-1.png')] bg-cover bg-no-repeat bg-center py-32">
+        <h1 class="title text-center text-6xl text-red-400 py-4 font-bold">Select Five Players For Your Club</h1>
+        <p class="text-white text-center mt-4 font-medium text-lg">You can select 5 players from list. You can not select more than 5 player.<br>Also you can select according your budget.we are giving you all facilities <br>coaches and mentors with player. you can also pick <br> in how much you want.</p>
+    </header>
 
-    
+
+    <!-- Main Section start -->
+
+    <section class="main-section bg-gray-900 text-slate-200">
+
+        <!-- Divide Main section by grid columns start  -->
+        <div class="w-5/6 mx-auto grid grid-cols-3 gap-4 py-16">
+
+            <!-- Players Start -->
+            <div class="col-span-2 row-span-4">
+
+                <!-- Players Lists Start -->
+                <div class="players text-center grid grid-cols-3 gap-4">
+
+                    <!-- Each Player Start -->
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/1.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Cristiano Ronaldo</h2>
+                            <p class="text-slate-300 py-2">36 Goals * 120 Assists</p>
+                            <button onclick="addToCart(this)" class=" mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400 deactive">Select</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/2.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Neymar JR</h2>
+                            <p class="text-slate-300 py-2">24 Goals * 80 Assists</p>
+                            <button onclick="addToCart(this)" class="deactive mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400">Select</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/3.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Luis Suarez</h2>
+                            <p class="text-slate-300 py-2">35 Goals * 23 Assists</p>
+                            <button onclick="addToCart(this)" class="deactive mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400">Select</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/7.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Edinson Cavani</h2>
+                            <p class="text-slate-300 py-2">26 Goals * 50 Assists</p>
+                            <button onclick="addToCart(this)" class="deactive mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400">Select</button>
+                        </div>
+                    </div>
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/5.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Paulo Dybala</h2>
+                            <p class="text-slate-300 py-2">26 Goals * 70 Assists</p>
+                            <button onclick="addToCart(this)" class="deactive mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400">Select</button>
+                        </div>
+                    </div>
+                    <div class="text-center bg-black rounded font-semibold pb-2">
+                        <img class="w-full h-32" src="/images/6.jpg" alt="">
+                        <div class="py-6">
+                            <h2 class="text-xl py-2 mt-2">Sergio Ramos</h2>
+                            <p class="text-slate-300 py-2">10 Goals * 50 Assists</p>
+                            <button onclick="addToCart(this)" class="deactive mt-4 bg-blue-900 w-4/5 py-2 text-lg hover:bg-cyan-400">Select</button>
+                        </div>
+                    </div>
+                    <!-- Each Player End -->
+
+                </div>
+                <!-- Players Lists End -->
+
+            </div>
+            <!-- Players End -->
+
+            <!-- Selected Players Start -->
+            <div>
+                <div class="w-5/6 mx-auto bg-black text-white">
+                    <h1 class="text-center text-2xl font-bold pt-4 pb-2">Selected-V</h1>
+                    <div class="order-list ml-4 text-white">
+                        <ol class="list-decimal ml-2 pb-2" id="ol">
+                            
+                        </ol>
+                        <p id="stop" class="text-center text-yellow-500 font-sm py-4 uppercase"><span class="text-red-600">Warning!</span> Don't try for add more</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Selected Players End -->
+
+            <!-- Players Expenses Start -->
+            <div>
+                <div class="w-5/6 mx-auto bg-black text-white">
+                    <h1 class="text-center text-2xl font-bold pt-4 pb-2">Budget</h1>
+
+                    <div class="total-calculation px-8 py-8">
+                        <!-- per player cost  -->
+                        <div class="player-cost flex justify-between">
+                            <label class="w-3/6 text-md" for="player">Per Player</label>
+                            <input class="amount-input w-3/6" type="text" name="" id="player">
+                        </div>
+
+                        <!-- all player calculate -->
+                        <div class="btn-update mt-8 w-5/5 text-center">
+                            <button class="bg-blue-900 w-4/5 py-2 text-lg rounded hover:bg-cyan-400" id="calculate">Calculate</button>
+                        </div>
+
+                        <!-- player expenses -->
+                        <div class="player-expenses flex justify-between mt-8 text-lg">
+                            <p>Player Expenses</p>
+                            <p>$<span id="expenses">00</span></p>
+                        </div>
+                    
+                        <p class="text-center text-red-600 uppercase mt-4" id="player-validation">Number is invalid</p>
+
+                        <!-- manager cost -->
+
+                        <div class="player-cost flex justify-between mt-8 mb-4">
+                            <label class="w-3/6 text-md" for="manage">Manager</label>
+                            <input class="amount-input w-3/6" type="text" name="" id="manager">
+                        </div>
+
+                        <!-- coach cost -->
+
+                        <div class="player-cost flex justify-between my-4">
+                            <label class="w-3/6 text-md" for="coach">Coach</label>
+                            <input class="amount-input w-3/6" type="text" name="" id="coach">
+                        </div>
+
+                        <!-- calculate total cost -->
+                        <div class="btn-update mt-8 w-5/5 text-center">
+                            <button class="bg-blue-900 w-4/5 py-2 text-lg rounded hover:bg-cyan-400" id="calculate-total">Calculate Total</button>
+                        </div>
+
+                        <!-- total expenses -->
+                        <div class="player-expenses flex justify-between mt-8 text-lg">
+                            <p>Total</p>
+                            <p class="text-red-500">$<span id="total">00</span></p>
+                        </div>
+
+                        <p class="text-center text-red-600 uppercase mt-4" id="total-validation">Number is invalid</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Players Expenses End -->
+
+        </div>
+        <!-- Divide Main section by grid columns end -->
+    </section>
+
+    <!-- Main Section end -->
+
     <!-- script file -->
     <script src="js/app.js"></script>
 </body>
