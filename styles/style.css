@@ -1,2 +1,51 @@
 /* Google Fonts Link  */
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+/* Main Style */
+
+
+.title {
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.amount-input {
+    background: none;
+    border: 1px solid slategrey;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.list-decimal li{
+    width: 95%;
+    padding: 5px 10px;
+    background-color: rgba(8, 88, 88, 0.589);
+    margin: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer {
+    border-top: 1px solid gray;
+}
+
+
+#stop {
+    display: none;
+}
+
+/* button:disabled */
+button[disabled]{
+  background-color: #686868;
+}
+button[disabled]:hover {
+    background-color: #686868;
+
+}
+
+
+/* total validation  */
+#player-validation,
+#total-validation {
+    display: none;
+}
